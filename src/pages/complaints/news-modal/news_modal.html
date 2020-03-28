@@ -1,0 +1,34 @@
+<ion-header class="login-header auth-header">
+    <ion-navbar>
+            <ion-buttons left>
+            <button ion-button (click)="dismiss()">
+                <ion-icon name="arrow-back" class="menu_icon"></ion-icon>
+            </button>
+        </ion-buttons>
+        <!-- <img class="logo" src="assets/images/Smartneta/BJP_logo.svg.png"> -->
+        <img class="logo" src="http://13.233.175.188:8585/open/mobile/logo.jpg">
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-row>
+        <ion-col class="news_header">{{news.header}}</ion-col>
+    </ion-row>
+    
+    <ion-row>
+        <ion-col class="news_image">
+            <img class="news_photo" src="http://13.233.175.188:8585/open/mobile/download-image/{{news.image}}">
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="news_desc">
+            <p class="p-margin">
+                {{news.details}}
+            </p>
+        </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col class="news_link"><a [attr.href]="createWebLink(news.webLink)">{{createWebLink(news.webLink)}}</a></ion-col>
+    </ion-row>
+</ion-content>

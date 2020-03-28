@@ -1,0 +1,104 @@
+notifications-page {
+    .logo{
+        width: 42px;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+    .toolbar-content-md{
+        display: table-cell;
+    }
+    .complaint_title{
+        font-size: 27px;
+        padding: 5px;
+        color: #f37435;
+        text-align: center;
+    }   
+    .space{
+        margin-bottom: 17px;
+        height: auto;
+    }
+    .head{
+        text-align: center;
+    }
+    // .buttons{
+    //     width: 317px;
+    //     height: 277px;
+    //     position: absolute;
+    //     left: 50%;
+    //     top: 50%;
+    //     margin: -140px 0 0 -158px;
+    // }
+
+    .schedule-data
+    {
+        border-radius: 6px;
+        background-color: $white;
+        padding: 12px 14px;
+        @include element-shadow();
+
+        .data-item
+        {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .schedule-data1{
+        border-radius: 6px;
+        background-color: $white;
+        padding: 12px 14px !important;
+        @include element-shadow();
+        .data-item
+        {
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+			font-size: 15px ;
+			position: relative;
+			padding-right: 35px;
+        }
+    }
+    .title{
+        font-size: 17px !important;
+        font-weight: bold;
+    }
+    .menu_icon{
+        float: right;
+        font-size: 30px;
+        padding-right: 10px;
+        padding-top: 7px;
+        color: black;
+	}
+	.check_icon{
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		color: green;
+		font-size: 24px;
+    }
+    .auth-header .toolbar-background {
+        background-color: white;
+    }
+    .auth-header .toolbar-title, .auth-header .back-button, .auth-header .bar-button{
+        color: black;
+    }
+    .footer{
+        padding: 0px 15px;
+        // background-color: #ed9622;
+        background-color: #444;
+        color:white;
+    }
+    .privacy{
+        color: #00748f !important;
+    }
+    .scroll-content{
+        margin-bottom: 76px;
+    }
+    @media only screen and (min-width: 600px){
+        .auth-content .scroll-content {
+            padding: 80px 6%;
+        }
+    }
+}

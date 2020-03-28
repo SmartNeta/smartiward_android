@@ -1,0 +1,118 @@
+<ion-header class="login-header auth-header">
+    <ion-navbar>
+        <!-- <ion-title>Complaints</ion-title> -->
+        <!-- <img class="logo" src="assets/images/Smartneta/BJP_logo.svg.png"> -->
+        <!-- <ion-icon name="menu" class="menu_icon"></ion-icon> -->
+        <!-- <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <button ion-button>
+            <ion-icon name="notifications"></ion-icon>
+        </button> -->
+
+        <ion-buttons left>
+            <button ion-button menuToggle>
+                <ion-icon name="menu" class="menu_icon"></ion-icon>
+            </button>
+        </ion-buttons>
+        <!-- <img class="logo" src="assets/images/Smartneta/BJP_logo.svg.png"> -->
+        <img class="logo" src="{{imageUrl}}">
+        <ion-buttons end style="display: flex !important;">
+            <button ion-button (click)="gotoNotification()">
+                <ion-icon name="ios-notifications" class="bell_icon"></ion-icon>
+                <span class="notification" *ngIf="totalCount > 0">{{totalCount}}</span>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+      
+<ion-content class="login-content auth-content">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-row>
+        <ion-col class="bjplogo">
+            <img class="logo1" src="{{imageUrl}}">
+        </ion-col>
+    </ion-row>
+    <div class="">
+        <ion-row>
+            <ion-col class="schedule-data">
+                <div class="data-item">
+                    <p class="complaint_title" *ngIf="descText!=undefined">
+                        <!-- <span>{{'Info' | translate}}</span><br />
+                        <span>{{'Info1' | translate}}</span><br />
+                        <span>{{'Info2' | translate}}</span> -->
+                        {{descText.text}}
+                    </p> 
+                </div>
+            </ion-col>
+        </ion-row>
+
+        <!-- <ion-row class="space">
+            <ion-col class="schedule-data">
+                <div class="data-item" (click)="selctDept()">
+                    <p class="complaint_title">Register a new complaint</p> 
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row class="space">
+            <ion-col class="schedule-data">
+                <div class="data-item" (click)="getAllComplaints()">
+                    <p class="complaint_title">Status of your registered complaints</p> 
+                </div>
+            </ion-col>
+        </ion-row> -->
+    </div>
+    <!-- <hr> -->
+    <div class="ads">
+        <ion-row *ngFor="let n of news" class="row-border" >
+            <ion-col col-3 class="">
+                <img class="adImage" (click)="showNews(n)" src='http://13.233.175.188:8585/open/mobile/download-image/{{n.image}}'>
+            </ion-col>
+            <ion-col col-9 class="">
+                <ion-row (click)="showNews(n)" class="adTitle">{{n.header}}</ion-row>
+                <ion-row (click)="showNews(n)" class="adSite">{{n.details}}</ion-row>
+                <ion-row>
+                    <ion-col class="link-text">
+                        <a [attr.href]="createWebLink(n.webLink)">{{createWebLink(n.webLink)}}</a>
+                    </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+        <!-- <hr> -->
+        <!-- <ion-row>
+            <ion-col col-3 class="">
+                <img class="adImage" src="assets/images/Smartneta/upload_image.png">
+            </ion-col>
+            <ion-col col-9 class="">
+                <ion-row class="adTitle">Salary above Rs.30,000? Top credit cards for you</ion-row>
+                <ion-row class="adSite">BankBazaar</ion-row>
+            </ion-col>
+        </ion-row>
+        <hr>
+        <ion-row>
+            <ion-col col-3 class="">
+                <img class="adImage" src="assets/images/Smartneta/upload_image.png">
+            </ion-col>
+            <ion-col col-9 class="">
+                <ion-row class="adTitle">Just pay Rs 11 & avoid expensive Medical Bills</ion-row>
+                <ion-row class="adSite">Quickbima.com</ion-row>
+            </ion-col>
+        </ion-row>
+        <hr>
+        <ion-row>
+            <ion-col col-3 class="">
+                <img class="adImage" src="assets/images/Smartneta/upload_image.png">
+            </ion-col>
+            <ion-col col-9 class="">
+                <ion-row class="adTitle">Just pay Rs 11 & avoid expensive Medical Bills</ion-row>
+                <ion-row class="adSite">Quickbima.com</ion-row>
+            </ion-col>
+        </ion-row> -->
+    </div>
+</ion-content>
+
+<ion-footer>
+    <p class="footer" *ngIf="descText!=undefined">&copy;{{descText.footer}} <a href="http://smartneta.com/privacy-policy/"><u class="privacy">Privacy Policy</u></a></p>
+</ion-footer>

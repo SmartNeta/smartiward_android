@@ -1,0 +1,71 @@
+login-page {
+	.login-content
+	{
+		.alt-options
+		{
+			.button
+			{
+				margin: 0px;
+				padding: 0px;
+				font-size: 1.4rem;
+			}
+
+			.forgot-button
+			{
+				color: $white-d;
+
+				.button-inner
+				{
+					justify-content: flex-start;
+				}
+			}
+
+			.signup-button
+			{
+				font-weight: 500;
+				color: $theme-color-2;
+
+				.button-inner
+				{
+					justify-content: flex-end;
+				}
+			}
+		}
+		.login-form{
+			margin-top: 37px;
+		}
+		.bjplogo{
+			text-align: center;
+			margin-top: 20px;
+		}
+		.logo1{
+			width: 55%;
+		}
+		
+		
+		.textLabel{
+			font-size: 1.5rem;
+		}
+		.show-hide-password .type-toggle {
+			top: 24px !important;
+		}
+		.sampark{
+			text-align: center;
+    		font-size: 25px;
+		}
+	}
+	.logo{
+		width: 15%;
+		margin-left: 5px;
+		vertical-align: middle;
+	}
+	.toolbar-content-md{
+		display: table-cell;
+	}
+	.auth-header .toolbar-title, .auth-header .back-button, .auth-header .bar-button{
+		color: black;
+	}
+	.auth-header .toolbar-background {
+        background-color: white;
+    }
+}

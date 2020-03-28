@@ -1,0 +1,81 @@
+<ion-header class="login-header auth-header">
+    <ion-navbar>
+        <ion-buttons left>
+            <button ion-button menuToggle>
+                <ion-icon name="menu" class="menu_icon"></ion-icon>
+            </button>
+        </ion-buttons>
+        <!-- <img class="logo" src="assets/images/Smartneta/BJP_logo.svg.png"> -->
+        <img class="logo" src="{{imageUrl}}">
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <ion-row>
+        <ion-col class="about">
+            <h3 style="margin-bottom: 0;">{{'about' | translate}}</h3>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="description" *ngIf="descText != undefined">
+            {{descText.about}}
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="about">
+            <h3 style="margin: 0;">{{'Contact' | translate}}</h3>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="description" *ngIf="descText != undefined">
+                {{descText.address1}}<br /><br />
+                {{descText.address2}}<br /><br />
+                Phone :{{descText.contact}}
+            <!-- India Office<br />
+            579, 32nd D Cross Rd,<br />
+            4th Block, Jayanagar,<br     />
+            Bengaluru 560011<br />
+            Mobile - +919844202861<br /><br />
+
+            Australia Office<br />
+            No. 25, Mildred avenue<br />
+            Hornsby,Sydney - 2077<br />
+            Phone :+610452356478 -->
+           
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="about">
+            <h3 style="margin: 0;">{{'Email' | translate}}</h3>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="description" *ngIf="descText != undefined">
+                {{descText.email}}
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="about">
+            <h3 style="margin: 0;">{{'Website' | translate}}</h3>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col class="description" *ngIf="descText != undefined">
+            <a href={{descText.website}}><b>{{descText.website}}</b></a>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col style="padding: 16px" *ngIf="descText != undefined">
+            <a href={{descText.facebookLink}} class="fa fa-facebook"></a>
+            <a href={{descText.twitterLink}} class="fa fa-twitter"></a>
+        </ion-col>
+    </ion-row>
+
+</ion-content>
+
+<ion-footer>
+    <p class="footer" *ngIf="descText!=undefined">&copy;{{descText.footer}} <a href="http://smartneta.com/privacy-policy/"><u class="privacy">Privacy Policy</u></a></p>
+</ion-footer>

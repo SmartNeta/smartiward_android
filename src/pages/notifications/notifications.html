@@ -1,0 +1,44 @@
+<ion-header class="login-header auth-header">
+    <ion-navbar>
+        <!-- <img class="logo" src="assets/images/Smartneta/BJP_logo.svg.png"> -->
+        <img class="logo" src="{{imageUrl}}">
+        <!-- <ion-icon name="menu" class="menu_icon"></ion-icon> -->
+        <button ion-button menuToggle>
+            <ion-icon class="menu_icon" name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+    
+
+</ion-header>
+
+<ion-content class="login-content auth-content">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <div class="buttons">
+        <h2 class="head">{{'Notifications' | translate}}</h2>
+        <ion-row class="space" *ngFor="let c of notifications">
+            <ion-col class="schedule-data1 shadow">
+              <div class="data-item">            
+                  <div class="title">{{'Notification' | translate}}:{{c.notification}}</div>
+                  <div>{{'Notification date' | translate}}:{{c.modifiedDate | date: 'dd/MM/yy'}}</div>
+                  <div>{{'Complaint Id' | translate}}:{{c.complaint.incidentId}}</div>
+                  <div>{{'Department' | translate}}:{{c.complaint.subDepartment.department.name}}</div>
+                  <div>{{'Sub' | translate}}:{{c.complaint.subDepartment.name}}</div>
+                  <div>{{'Comment' | translate}}:{{c.complaint.complaint}}</div>
+                  <div>{{'Status' | translate}}:{{c.complaint.status}}</div>
+                  <ion-icon class="check_icon" name="checkmark-circle" (click)="markAsReadNotification(c.id)"></ion-icon>
+              </div>
+            </ion-col>
+        </ion-row>
+        <ion-row *ngIf="notificationsCount == 0">
+          <ion-col class="schedule-data1 shadow" style="text-align: center;">
+            <div class="title">{{'notifications not found.' | translate}}</div>
+          </ion-col>
+        </ion-row>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <p class="footer" *ngIf="descText!=undefined">&copy;{{descText.footer}} <a href="http://smartneta.com/privacy-policy/"><u class="privacy">Privacy Policy</u></a></p>
+</ion-footer>

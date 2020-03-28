@@ -1,0 +1,131 @@
+<ion-header class="login-header auth-header">
+        <ion-navbar>
+            <!-- <img class="logo" src="assets/images/Smartneta/BJP_logo.svg.png"> -->
+            <img class="logo" src="{{imageUrl}}">
+            <!-- <ion-icon name="menu" class="menu_icon"></ion-icon> -->
+            <button ion-button menuToggle>
+                <ion-icon class="menu_icon" name="menu"></ion-icon>
+            </button>
+        </ion-navbar>
+        <ion-row>
+            <ion-col col-5></ion-col>
+            <ion-col class="activity" col-7>
+                <ion-item class="items">
+                    <ion-select class="selectfrom" interface="popover" [(ngModel)]="status" (ionChange)="onChange()">
+                            <ion-option [value]="All" selected>{{'All' | translate}}</ion-option>
+                            <ion-option [value]="Assigned">{{'Assigned' | translate}}</ion-option>
+                            <ion-option [value]="Unassigned">{{'Unassigned' | translate}}</ion-option>
+                            <ion-option [value]="Inprogress">{{'Inprogress' | translate}}</ion-option>
+                            <ion-option [value]="Resolved">{{'Resolved' | translate}}</ion-option>
+                            <!-- <ion-option [value]="Ignored">{{'Ignored' | translate}}</ion-option> -->
+                            <ion-option [value]="OutOfScope">{{'Out Of Scope' | translate}}</ion-option>
+                    </ion-select>      
+                </ion-item>
+            </ion-col>
+        </ion-row>
+
+    </ion-header>
+    
+    <ion-content class="login-content auth-content">
+        <ion-refresher (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+        <div class="buttons">
+            <h2 class="head">{{'Registered complaints' | translate}}</h2>
+            <ng-container *ngIf="noRecords != 0">
+            <ion-row class="space" *ngFor="let c of complaints">
+                <ion-col class="schedule-data1 shadow">
+                    <div class="data-item">            
+                        <div class="title">{{'Complaint' | translate}}:#{{c.incidentId}}</div>
+                        <div>{{'Complaint date' | translate}}:{{c.createdDate | date: 'dd/MM/yy'}}</div>
+                        <div>{{'Department' | translate}}:{{c.subDepartment.department.name}}</div>
+                        <div>{{'Sub' | translate}}:{{c.subDepartment.name}}</div>
+                        <div>{{'Comment' | translate}}:{{c.complaint}}</div>
+                        <div>{{'Status' | translate}}:{{c.status | translate}}</div>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ng-container>
+            <ion-row class="space" *ngIf="noRecords == 0">
+                    <ion-col class="schedule-data1 shadow">
+                        <div class="data-item">            
+                            <div class="title1">{{'No records found' | translate}}</div>
+                        </div>
+                    </ion-col>
+                </ion-row>
+
+            <!-- <ion-row class="space">
+                <ion-col class="schedule-data1">
+                    <div class="data-item">     
+                        <div class="title">Complaint#145</div>
+                        <div>Complaint date:12/04/18</div>
+                        <div>Department:BESCOM</div>
+                        <div>Sub:Trade Licence</div>
+                        <div>Comment:hello</div>
+                        <div>Status:under investigation</div>
+                    </div>
+                </ion-col>
+            </ion-row>
+
+        <ion-row class="space">
+                <ion-col class="schedule-data1">
+            <div class="data-item">
+                   
+                <div class="title">Complaint#145</div>
+                <div>Complaint date:12/04/18</div>
+                <div>Department:BESCOM</div>
+                <div>Sub:Trade Licence</div>
+                <div>Comment:hello</div>
+                <div>Status:under investigation</div>
+            </div>
+        </ion-col>
+        </ion-row>
+
+        <ion-row class="space">
+                <ion-col class="schedule-data1">
+            <div class="data-item">
+                   
+                <div class="title">Complaint#145</div>
+                <div>Complaint date:12/04/18</div>
+                <div>Department:BESCOM</div>
+                <div>Sub:Trade Licence</div>
+                <div>Comment:hello</div>
+                <div>Status:under investigation</div>
+            </div>
+        </ion-col>
+        </ion-row> -->
+
+
+
+            <!-- <ion-row class="space">
+                <ion-col class="schedule-data">
+                    <div class="data-item">
+                   
+                    <ion-row class="title">Complaint#145</ion-row>
+                    <ion-row>Complaint date:12/04/18</ion-row>
+                    <ion-row>Department:BESCOM</ion-row>
+                    <ion-row>Sub:Trade Licence</ion-row>
+                    <ion-row>Comment:hello</ion-row>
+                    <ion-row>Status:under investigation</ion-row>
+                    </div>
+                </ion-col>
+            </ion-row> -->
+
+
+
+            
+
+
+            <!-- <ion-row class="space">
+                <ion-col class="schedule-data">
+                    <div class="data-item">
+                        <p class="complaint_title">Status of your registered complaints</p> 
+                    </div>
+                </ion-col>
+            </ion-row> -->
+        </div>
+    </ion-content>
+
+    <ion-footer>
+        <p class="footer" *ngIf="descText!=undefined">&copy;{{descText.footer}} <a href="http://smartneta.com/privacy-policy/"><u class="privacy">Privacy Policy</u></a></p>
+    </ion-footer>

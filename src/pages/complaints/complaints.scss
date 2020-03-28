@@ -1,0 +1,125 @@
+complaints{
+    .logo{
+        width: 42px;
+        margin-left: 7px;
+        vertical-align: middle;
+    }
+    .toolbar-content-md{
+        display: table-cell;
+    }
+    .scroll-content{
+        margin-bottom: 76px;
+    }
+    .bjplogo{
+        text-align: center;
+        margin-top: 20px !important;
+    }
+    .logo1{
+        width: 55%;
+    }
+    .complaint_title{
+        font-size: 15px;
+        padding: 5px;
+        // color: #f37435;
+        color: rgb(237, 150, 34);
+        // text-align: justify;
+        text-align: center;
+        margin: 10px;
+    }   
+    .space{
+        margin-bottom: 17px;
+        height: 130px;
+    }
+    .buttons{
+        width: 80%;
+        //min-height: 60%;
+        position: absolute;
+        left: 50%;
+        top: 46%;
+        transform: translate(-50%, -50%);
+    }
+    .menu_icon{
+        float: right;
+        font-size: 30px;
+        padding-right: 10px;
+        padding-top: 7px;
+        // color: white;
+        color: black;
+    }
+    .bell_icon{
+        font-size: 30px;
+        margin-right: 15px;
+        color: black;
+    }
+
+    .schedule-data
+    {
+        // border-radius: 6px;
+        // background-color: $white;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        padding: 12px 14px;
+        @include element-shadow();
+
+        .data-item
+        {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    .adTitle{
+        // font-weight: bold;
+        font-size: 15px;
+        text-align: justify;
+    }
+    .adSite{
+        line-height: 20px;
+        color: gray;
+        text-overflow: ellipsis !important;
+        height: 35px;
+        white-space: normal !important;
+        overflow: hidden !important;
+        text-align: justify;
+    }
+    .ads{
+        margin-top: 10px;
+    }
+    .adImage{
+        border-radius: 5px;
+        border: 0.1px solid white;
+    }
+    .footer{
+        padding: 0px 15px;
+        // background-color: #ed9622;
+        background-color: #444;
+        color:white;
+    }
+    .privacy{
+        color: #00748f !important;
+    }
+    .auth-header .toolbar-background {
+        background-color: white;
+    }
+    .row-border{
+        border-bottom: 1px solid lightgray;
+    }
+
+    .link-text{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+
+
+    @media only screen and (min-width: 600px){
+        .auth-content .scroll-content {
+            padding: 80px 6%;
+        }
+    }
+
+
+}

@@ -1,0 +1,120 @@
+subdepartment{
+    .logo{
+        width: 42px;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+    .toolbar-content-md{
+        display: table-cell;
+    }
+    .menu_icon{
+        float: right;
+        font-size: 30px;
+        padding-right: 10px;
+        padding-top: 7px;
+        color: black;
+    }
+    .card_content_padding{
+        padding: 10px 13px !important;
+    }
+    .dept_logo{
+        width: 58%;
+        height: 46px;
+    }
+    .head{
+        text-align: center;
+    }
+    .dept{
+        font-size: 20px;
+        font-weight: bold;
+        color: #f37435;
+        // text-align: center;
+        line-height: 27px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .dept1{
+        font-size: 23px;
+        color: #f37435;
+        // text-align: center;
+        line-height: 26px;
+    }
+    .card-md {
+        border-radius: 6px !important;
+    }
+    .page_title{
+        margin-bottom: 20px !important;
+    }
+
+    .subdept{
+        text-align: center;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    .deptLogo_col{
+        // padding-top: 9px !important;
+        // padding-bottom: 9px !important;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .active{
+        background-color: antiquewhite
+    }
+    .auth-header .toolbar-background {
+        background-color: white;
+    }
+    .auth-header .toolbar-title, .auth-header .back-button, .auth-header .bar-button{
+        color: black;
+    }
+    .footer{
+        padding: 0px 15px;
+        // background-color: #ed9622;
+        background-color: #444;
+        color:white;
+    }
+    .privacy{
+        color: #00748f !important;
+    }
+    .scroll-content{
+        margin-bottom: 76px;
+    }
+    @media only screen and (min-width: 600px){
+        .auth-content .scroll-content {
+            padding: 40px 8%;
+        }
+        .dept_logo{
+            width: 35%;
+            height: 93px;
+        }
+        .dept {
+            font-size: 46px;
+            font-weight: bold;
+            color: #f37435;
+            line-height: 93px;
+        }
+        .head{
+            font-size: 47px;
+            text-align: center;
+            margin-bottom: 3rem;
+            margin-top: 4.8rem;
+        }
+        .card-md{
+            margin: 18px;
+        }
+        .menu_icon {
+            float: right;
+            font-size: 61px;
+            padding-right: 25px;
+            padding-top: 17px;
+            color: white;
+        }
+        .dept1 {
+            font-size: 34px;
+            color: #f37435;
+            line-height: 52px;
+        }
+        .page_title{
+            margin-bottom: 25px !important;
+        }
+    }
+}

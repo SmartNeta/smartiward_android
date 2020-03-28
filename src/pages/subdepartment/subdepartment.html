@@ -1,0 +1,77 @@
+<ion-header class="login-header auth-header">
+    <ion-navbar>
+        <!-- <img class="logo" src="assets/images/Smartneta/BJP_logo.svg.png"> -->
+        <img class="logo" src="{{imageUrl}}">
+        <!-- <ion-icon name="menu" class="menu_icon"></ion-icon> -->
+        <button ion-button menuToggle>
+            <ion-icon class="menu_icon" name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content auth-content">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    <div class="buttons">
+        <h2 class="head">{{'Select Sub-department' | translate}}</h2>
+    </div>
+    <ion-card class="page_title">
+        <ion-card-content class="card_content_padding">
+            <ion-row style="display: table">
+                <ion-col col-4 class="deptLogo_col">
+                    <img class="dept_logo" src="assets/images/Smartneta/councillogo.png">
+                </ion-col>
+                <ion-col class="dept">
+                    {{selectedDept.name}}
+                </ion-col>
+            </ion-row>   
+        </ion-card-content>
+    </ion-card>
+
+    <div class="subdept"> 
+    <ion-card (click)="next(sd)" *ngFor="let sd of subDepts" [ngClass]="(subDeptId==sd.id)?'active':''" >
+        <ion-card-content class="card_content_padding">
+            <ion-row>
+                <!-- <ion-col>
+                    <img class="dept_logo" src="assets/images/Smartneta/bescom-squarelogo.png">
+                </ion-col> -->
+                <ion-col class="dept1">
+                    {{sd.name}}
+                </ion-col>
+            </ion-row>   
+        </ion-card-content>
+    </ion-card>
+    <!-- <ion-card>
+        <ion-card-content class="card_content_padding">
+            <ion-row>
+                <ion-col class="dept1">
+                    Trade license
+                </ion-col>
+            </ion-row>   
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content class="card_content_padding">
+            <ion-row>
+                <ion-col class="dept1">
+                    Tree cutting
+                </ion-col>
+            </ion-row>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-content class="card_content_padding">
+            <ion-row>
+                <ion-col class="dept1">
+                    Death certificate
+                </ion-col>
+            </ion-row>   
+        </ion-card-content>
+    </ion-card> -->
+</div>
+</ion-content>
+
+<ion-footer>
+    <p class="footer" *ngIf="descText!=undefined">&copy;{{descText.footer}} <a href="http://smartneta.com/privacy-policy/"><u class="privacy">Privacy Policy</u></a></p>
+</ion-footer>

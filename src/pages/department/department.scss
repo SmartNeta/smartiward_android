@@ -1,0 +1,98 @@
+department{
+    .logo{
+        width: 42px;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+    .toolbar-content-md{
+        display: table-cell;
+    }
+    .menu_icon{
+        float: right;
+        font-size: 30px;
+        padding-right: 10px;
+        padding-top: 7px;
+        color: black;
+    }
+    .card_content_padding{
+        padding: 0 20px !important;
+        height: 100%;
+    }
+    .dept_logo{
+        width: 72%;
+        height: 46px;
+    }
+    .logo_col{
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+    .head{
+        text-align: center;
+    }
+    .dept{
+        font-size: 20px;
+        font-weight: bold;
+        color: #f37435;
+        // text-align: center;
+        line-height: 30px;
+        display: table-cell;
+        vertical-align: middle;
+    }
+    .card-md {
+        border-radius: 6px !important;
+        height: 90px;
+    }
+    .record{
+        display: table;
+        height: 100%;
+    }
+    .active{
+        background-color: antiquewhite
+    }
+    
+    .auth-header .toolbar-background {
+        background-color: white;
+    }
+    .footer{
+        padding: 0px 15px;
+        // background-color: #ed9622;
+        background-color: #444;
+        color:white;
+    }
+    .privacy{
+        color: #00748f !important;
+    }
+    .scroll-content{
+        margin-bottom: 76px;
+    }
+    @media only screen and (min-width: 600px){
+        .auth-content .scroll-content {
+            padding: 40px 8%;
+        }
+        .dept_logo{
+            width: 35%;
+            height: 93px;
+        }
+        .dept {
+            font-size: 46px;
+            font-weight: bold;
+            color: #f37435;
+            line-height: 93px;
+        }
+        .head{
+            font-size: 47px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .card-md{
+            margin: 18px;
+        }
+        .menu_icon {
+            float: right;
+            font-size: 61px;
+            padding-right: 25px;
+            padding-top: 17px;
+            color: white;
+        }
+    }
+}

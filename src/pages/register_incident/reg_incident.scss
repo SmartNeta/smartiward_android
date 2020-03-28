@@ -1,0 +1,149 @@
+reg-incident{
+    .user-main-data-row
+    {
+        padding: 4% 4% 0px;
+        align-items: center;
+
+        .user-image
+        {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+        }
+
+        .social-presence-row
+        {
+            padding: 0px 0px 5px 10px;
+
+            .button
+            {
+                margin: 0px;
+                border-radius: 6px;
+                background-color: #f37435;
+                color: color($colors, button-alt, contrast);
+                font-weight: 500;
+            }
+        }
+
+        .profile-action-row
+        {
+            padding: 5px 0px 0px 10px;
+
+            .button
+            {
+                margin: 0px;
+                border-radius: 6px;
+                // background-color: color($colors, button-alt, base);
+                background-color: #32db64;
+                color: color($colors, button-alt, contrast);
+                font-weight: 500;
+            }
+        }
+    }
+    .logo{
+        width: 42px;
+        margin-left: 5px;
+        vertical-align: middle;
+    }
+    .toolbar-content-md{
+        display: table-cell;
+    }
+    .menu_icon{
+        float: right;
+        font-size: 30px;
+        padding-right: 10px;
+        padding-top: 7px;
+        color: black;
+    }
+    .head{
+        margin-top: 1rem !important;
+        font-size: 1.8rem !important;
+        margin-bottom: 0 !important;
+        font-weight: bold;
+    }
+    .upload_area{
+        padding: 33px !important;
+        // background-color: #ffd966;
+        text-align: center;
+        border: 1px solid gray;
+    }
+    .buttons{
+        padding-left: 20px !important;
+    }
+    textarea.text-input.text-input-md {
+        line-height: 22px;
+        height: 63px;
+        margin-right: 0 !important;
+        width: 100%;
+    }
+    .comments{
+        font-size: 14px !important;
+        // margin-bottom: 15px !important;
+        margin: 8px 8px 13px 0 !important;
+    }
+    ion-textarea{
+        border: 1px solid grey;
+        padding: 13px;
+    }
+    .text-input-md{
+        margin: 0 !important;
+    }
+    .map_area{
+        background-image: url('../assets/images/Smartneta/map.jpeg');
+        height: 140px;
+        margin-top: 20px;
+        font-weight: bold;
+        // padding: 62px;
+        word-break: break-all;
+        font-size: 18px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        padding: 0px 32px;
+        border: 1px solid gainsboro;
+    }
+    /*.edit_button{
+        width:84px;
+    }
+    .save_button{
+        background-color: #f37435;
+    }*/
+    .save_button1{
+        background-color: #f37435;
+        width: 88px;
+    }
+    ion-icon.icon.icon-md.ion-md-camera{
+        font-size: 2.2em !important;
+    }
+    // .upload_photo{
+    //     position: absolute;
+    //     top: 100%;
+    //     left: 22%;
+    // }
+    .button-md-secondary {
+        background-color: #6a6f73 !important;
+    }
+    img-loader img {
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+    }
+    .auth-header .toolbar-background {
+        background-color: white;
+    }
+    .auth-header .toolbar-title, .auth-header .back-button, .auth-header .bar-button{
+        color: black;
+    }
+    .footer{
+        padding: 0px 15px;
+        // background-color: #ed9622;
+        background-color: #444;
+        color:white;
+    }
+    .privacy{
+        color: #00748f !important;
+    }
+    .scroll-content{
+        margin-bottom: 76px;
+    }
+}

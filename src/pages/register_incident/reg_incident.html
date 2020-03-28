@@ -1,0 +1,84 @@
+<ion-header class="login-header auth-header">
+    <ion-navbar>
+        <!-- <img class="logo" src="assets/images/Smartneta/BJP_logo.svg.png"> -->
+        <img class="logo" src="{{imageUrl}}">
+        <!-- <ion-icon name="menu" class="menu_icon"></ion-icon> -->
+        <button ion-button menuToggle>
+            <ion-icon class="menu_icon" name="menu"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content auth-content">
+        <ion-refresher (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content></ion-refresher-content>
+        </ion-refresher>
+    <div>
+        <h3 class="head">{{'Register my incident' | translate}}</h3>
+    </div>    
+    <!-- <ion-row>
+        <ion-col col-7 class="upload_area">
+                <ion-icon name="camera"></ion-icon>
+        </ion-col>
+        <ion-col col-5 class="buttons">
+            <div>
+                <button ion-button class="save_button">Submit</button>
+            </div>
+            <div>
+                <button ion-button color="secondary" class="edit_button">Edit</button>
+            </div>
+        </ion-col>
+    </ion-row> -->
+    <ion-row class="user-main-data-row">
+        <ion-col col-3></ion-col>
+        <ion-col col-6 no-padding style="text-align: center;">
+          <!-- <preload-image class="user-image" [ratio]="{w:1, h:1}" [(src)]="assets/images/Smartneta/councillogo.png"></preload-image> -->
+          <!-- <img class="user-image" *ngIf="!base64Image" src="assets/images/Smartneta/upload.png" (click)="presentActionSheet()"> -->
+          <!-- <img class="user-image" [src]="base64Image" *ngIf="base64Image" (click)="presentActionSheet()" /> -->
+          <img class="user-image" [src]="image || 'assets/images/Smartneta/upload.png'" (click)="presentActionSheet()">
+          <!-- <ion-icon name="camera"></ion-icon> -->
+          <!-- <ion-icon class="user-image" name="person"></ion-icon> -->
+          <ion-row class="">
+              <ion-col>{{'upload photo' | translate}}</ion-col>
+          </ion-row>
+        </ion-col>
+        <ion-col col-3></ion-col>
+        <!-- <ion-col no-padding>
+          <ion-row class="social-presence-row">
+            <ion-col no-padding>
+                <button ion-button block small>
+                    Submit
+                </button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="profile-action-row">
+            <ion-col no-padding>
+              <button ion-button block small>
+                Edit
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-col> -->
+    </ion-row>
+    <!-- <ion-item> -->
+        <ion-label stacked class="comments">{{'Your comments' | translate}}</ion-label>
+        <ion-textarea [(ngModel)]="obj.complaint"></ion-textarea>
+    <!-- </ion-item> -->
+    <div class="map_area" (click)="launchLocationPage()">
+        {{'select_location' | translate}}
+    </div>
+    <ion-row>
+        <ion-col></ion-col>
+        <ion-col>
+            <button ion-button class="save_button1" (click)="createIncident()">{{'Save' | translate}}</button>
+        </ion-col>
+        <ion-col>
+            <button ion-button color="secondary" (click)="cancelIncident()">{{'Cancel' | translate}}</button>
+        </ion-col>
+        <ion-col></ion-col>
+    </ion-row>
+</ion-content>
+
+<ion-footer>
+    <p class="footer" *ngIf="descText!=undefined">&copy;{{descText.footer}} <a href="http://smartneta.com/privacy-policy/"><u class="privacy">Privacy Policy</u></a></p>
+</ion-footer>

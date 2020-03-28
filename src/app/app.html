@@ -1,0 +1,20 @@
+<ion-menu [content]="content" [swipeEnabled]="true">
+  <ion-content class="menu-content">
+  <div class="menu_logo">
+    <!-- <img class="menu_img" src="assets/images/Smartneta/BJP_logo.svg.png"> -->
+    <img class="menu_img" src="{{imageUrl}}">
+  </div>
+    <ion-list class="menu-list">
+      <button ion-item detail-none *ngFor="let page of pages" (click)="openPage(page)">
+        <ion-icon *ngIf="page.icon" name="{{page.icon}}" item-left></ion-icon>
+        {{page.title}}
+      </button>
+      <button ion-item detail-none *ngFor="let page of pushPages" (click)="pushPage(page)">
+        <ion-icon *ngIf="page.icon" name="{{page.icon}}" item-left></ion-icon>
+        {{page.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipe-back-enabled="false"></ion-nav>

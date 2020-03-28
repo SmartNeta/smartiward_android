@@ -1,0 +1,51 @@
+<ion-header class="login-header auth-header">
+    <ion-navbar>
+      <!-- <img class="logo" src="http://13.233.175.188:8585/open/mobile/logo.jpg"> -->
+      <ion-title>Verify OTP</ion-title>
+    </ion-navbar>
+  </ion-header>
+<ion-content class="login-content auth-content" padding>
+    <ion-row>
+    <ion-col class="bjplogo">
+        <!-- <img class="logo" src="assets/images/Smartneta/BJP_logo.svg.png"> -->
+        <img class="logo1" src="{{imageUrl}}">
+    </ion-col>
+    </ion-row>
+<form [formGroup]="form" (ngSubmit)="submit(form.value)">
+    <ion-label stacked>Enter OTP</ion-label>
+    <ion-item class="input-border" margin-bottom no-padding>
+      <ion-input type="tel" placeholder="Enter OTP" formControlName="otp" maxlength="4" pattern="[0-9]{4}"></ion-input>
+      <!-- <table style="margin: 0px auto;">
+        <tr>
+          <td>
+            <ion-input type="password" (keypress)="keyPress($event)" formControlName="otp1" #otp1 class="otp_input" maxlength='1' (keyup)="next(otp2, 'otp1')">
+            </ion-input>
+          </td>
+          <td>
+            <ion-input type="password" (keypress)="keyPress($event)" formControlName="otp2" #otp2 class="otp_input" maxlength='1' (keyup)="next(otp3, 'otp2')">
+            </ion-input>
+          </td>
+          <td>
+            <ion-input type="password" (keypress)="keyPress($event)" formControlName="otp3" #otp3 class="otp_input" maxlength='1' (keyup)="next(otp4, 'otp3')">
+            </ion-input>
+          </td>
+          <td>
+            <ion-input type="password" (keypress)="keyPress($event)" formControlName="otp4" #otp4 class="otp_input" maxlength='1' (keyup)="submit()">
+            </ion-input>
+          </td>
+        </tr>
+      </table> -->
+    </ion-item>
+    <button ion-button block type="submit"[disabled]="!form.valid" class="otp_btn">
+      Verify OTP
+    </button>
+
+    <ion-row>
+      <ion-col class="btn-resend">
+        <span (click)="ReSendOTP()">Resend OTP</span>
+      </ion-col>
+    </ion-row>
+    
+
+  </form>
+</ion-content>

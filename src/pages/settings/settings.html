@@ -1,0 +1,28 @@
+<ion-header class="login-header auth-header">
+        <ion-navbar>
+            <!-- <img class="logo" src="assets/images/Smartneta/BJP_logo.svg.png"> -->
+            <img class="logo" src="{{imageUrl}}">
+            <!-- <ion-icon name="menu" class="menu_icon"></ion-icon> -->
+            <button ion-button menuToggle>
+                <ion-icon class="menu_icon" name="menu"></ion-icon>
+            </button>
+        </ion-navbar>       
+
+    </ion-header>
+    
+    <ion-content class="login-content auth-content">
+        <ion-list>
+            <ion-item>
+                <ion-label>{{'Language' | translate}}</ion-label>
+                <ion-select [(ngModel)]="lang" (ionChange)="switchLanguage()" okText="{{'Ok'|translate}}" cancelText="{{'Cancel'|translate}}">
+                    <ion-option value="en">{{'English' | translate}}<span *ngIf="lang != 'en'">(English)</span></ion-option>
+                    <ion-option value="hi">{{'Hindi' | translate}}<span *ngIf="lang != 'en'">(Hindi)</span></ion-option>
+                    <ion-option value="kn">{{'Kannada' | translate}}<span *ngIf="lang != 'en'">(Kannada)</span></ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+    <ion-footer>
+        <p class="footer" *ngIf="descText!=undefined">&copy;{{descText.footer}} <a href="http://smartneta.com/privacy-policy/"><u class="privacy">Privacy Policy</u></a></p>
+    </ion-footer>
